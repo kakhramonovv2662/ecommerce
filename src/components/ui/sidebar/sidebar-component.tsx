@@ -50,7 +50,10 @@ const Sidebar = () => {
         </ul>
       </div>
 
-      <div className="sticky bottom-0 bg-white">
+      <div
+        className="sticky bottom-0 bg-white"
+        onClick={() => setIsSidebarShow(!isSidebarShow)}
+      >
         <SideBarNavLinks
           path={"collapse"}
           icon="collapse-arrow"
