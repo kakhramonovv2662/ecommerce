@@ -6,12 +6,10 @@ const MainLayout = () => {
   const { isSidebarShow } = useBaseStore();
 
   return (
-    <div className="md:grid md:grid-cols-[260px_minmax(0px,_1fr)_0px]">
+    <div className={`${isSidebarShow ? "block" : "md:grid md:grid-cols-[260px_minmax(0px,_1fr)_0px]"}`}>
       <div
-        className={`max-h-screen min-h-screen border-r-1 border-[#E3E5EB] overflow-y-auto fixed left-0 transition md:static md:translate-x-0 ${
-          isSidebarShow
-            ? "translate-x-0 w-full h-full bg-white z-[100]"
-            : "-translate-x-full"
+        className={`max-h-screen min-h-screen border-r-1 border-[#E3E5EB] overflow-y-auto transition duration-500 ${
+          isSidebarShow ? "-translate-x-full fixed left-0" : "translate-x-0 bg-white z-[100] fixed w-full md:static"
         }`}
       >
         <Sidebar />

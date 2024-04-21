@@ -1,4 +1,4 @@
-import { Button } from "@nextui-org/react";
+import { Button, Tooltip } from "@nextui-org/react";
 import { HeaderLayoutTypes } from "../types";
 import { SvgIcon } from "../components/ui/svg-icon";
 import useBaseStore from "../store/base";
@@ -6,20 +6,22 @@ import useBaseStore from "../store/base";
 const HeaderTools = () => {
   return (
     <div className="hidden md:flex items-center gap-3">
-      <Button
-        className="rounded-full"
-        isIconOnly
-        variant="light"
-        color="default"
-        startContent={
-          <SvgIcon
-            iconName="notification"
-            width="32"
-            height="32"
-            fillColor="#3E414C"
-          />
-        }
-      />
+      <Tooltip content="There is not message yet :(">
+        <Button
+          className="rounded-full"
+          isIconOnly
+          variant="light"
+          color="default"
+          startContent={
+            <SvgIcon
+              iconName="notification"
+              width="32"
+              height="32"
+              fillColor="#3E414C"
+            />
+          }
+        />
+      </Tooltip>
 
       <div className="rounded-[100px] p-1 bg-[#F6F7F9] flex items-center justify-center gap-2">
         <Button
@@ -67,9 +69,9 @@ export const HeaderLayout = ({
     <header
       className={`flex items-center justify-${position} py-4 px-8 ${parentClass} bg-white sticky top-0 z-50 border-b`}
     >
-      <div className="flex items-center gap-3 md:block">
+      <div className="flex items-center gap-3">
         <Button
-          className="flex md:hidden"
+          className={`${isSidebarShow ? "flex" : "hidden"}`}
           isIconOnly
           startContent={<SvgIcon iconName="menu" />}
           variant="light"

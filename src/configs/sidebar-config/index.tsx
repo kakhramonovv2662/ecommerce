@@ -17,32 +17,33 @@ const navigationLinks: SidebarItemTypes[] = [
     title: "Security Center",
     icon: "incident",
     path: "/security-center",
+    submenu: true,
     key: "security-center",
     subTitles: [
       {
         subTitle: "Attack Surface",
         subPath: "/attack-surface",
-        key: "attack-surface",
+        subKey: "attack-surface",
       },
       {
         subTitle: "Environment Overview",
         subPath: "/environment-overview",
-        key: "overview",
+        subKey: "overview",
       },
       {
         subTitle: "Security Questionnaires",
         subPath: "/security-questionnaires",
-        key: "questionnaires",
+        subKey: "questionnaires",
       },
       {
         subTitle: "Action Center",
         subPath: "/action-center",
-        key: "action",
+        subKey: "action",
       },
       {
         subTitle: "Vendor Marketplace",
         subPath: "/vendor-marketplace",
-        key: "marketplace",
+        subKey: "marketplace",
       },
     ],
   },
@@ -69,11 +70,12 @@ const navigationLinks: SidebarItemTypes[] = [
     icon: "detection",
     path: "/claims",
     key: "claims",
+    submenu: true,
     subTitles: [
       {
         subTitle: "Claims Calculator",
         subPath: "/claims-calculator",
-        key: "claims-calculator",
+        subKey: "claims-calculator",
       },
     ],
   },

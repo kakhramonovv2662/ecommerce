@@ -22,10 +22,11 @@ export type SidebarItemTypes = {
     | "report"
     | "setting";
   subTitles?: {
-    key: string;
+    subKey: string;
     subPath: string;
     subTitle: string;
   }[];
+  submenu?: boolean;
 };
 
 export type PageLayoutTypes = {
@@ -35,6 +36,8 @@ export type PageLayoutTypes = {
 
 export type BaseStoreTypes = {
   isSidebarShow: boolean;
+  isShowSubMenu: string;
 
+  setIsSidebarShowSubMenu: (value: string) => void;
   setIsSidebarShow: (value: boolean) => void;
 };
