@@ -13,4 +13,5 @@ export type SidebarNavTypes = {
     | "collapse-arrow";
   title: string;
   textStyle?: string;
+  submenu?: boolean;
 };
